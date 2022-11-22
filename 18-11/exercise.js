@@ -1,3 +1,11 @@
+// 0
+let number = 7;
+function toBinary(num) {
+  return num.toString(2)
+}
+console.log(toBinary(number))
+// number - son, toString string ga o`tkazadi, uning parametriga 2 qo`ysak, 2lik sanoq sistemasiga o`tkazadi
+
 /* // 1
 let i = 0;
 while (i < 3) {
@@ -60,7 +68,7 @@ console.log(pow(2, 3));
 // Buni ham aslida bittagina amal bilan bajarib qo`ysa bo`ladi : x ** n yoki Math.pow(x, n)
 // Lekin buni while loop orqali x ni n marta takrorlab o`ziga ko`paytirib chiqish orqali qilamiz */
 
-// 6
+/* // 6
 const ask = (question, yes, no) => {
   if (confirm(question)) yes();
   else no();
@@ -74,4 +82,4 @@ ask(
     alert("You canceled the execution");
   }
 );
-// Arrow function bilan qildik. Bunda function declaration bilan qilgan bilan bir xil bo`ladi.
+// Arrow function bilan qildik. Bunda function declaration bilan qilgan bilan bir xil bo`ladi. */
