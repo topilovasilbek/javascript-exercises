@@ -61,3 +61,13 @@ function replaceChars(str1, str2) {
 const a = "webbrain is web and Web weB point";
 const b = "web";
 replaceChars(a, b);
+
+// 7 Capitalize all words
+function capitalizeWords(str) {
+  let arr = str.split(' ');
+  let res = []
+  arr.forEach(element => res.push(element[0].toUpperCase() + element.slice(1)));
+  res= res.join(' ')
+  return res
+}
+console.log(capitalizeWords('asilbek topilov'));
