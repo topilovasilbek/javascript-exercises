@@ -17,8 +17,8 @@ console.log(user); */
 let user = {
   name: "Asilbek",
   age: 20,
-  /* set(key, propertyKey, propertyValue) {
-    Object.defineProperty(this, key, { [propertyKey]: propertyValue });
+  /* set(key, flagKey, flagValue) {
+    Object.defineProperty(this, key, { [flagKey]: flagValue });
   }, */
 };
 
