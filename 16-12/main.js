@@ -17,6 +17,9 @@ console.log(user); */
 let user = {
   name: "Asilbek",
   age: 20,
+  /* set(key, propertyKey, propertyValue) {
+    Object.defineProperty(this, key, { [propertyKey]: propertyValue });
+  }, */
 };
 
 Object.prototype.set = function (key, flagProperty, flagValue) {
