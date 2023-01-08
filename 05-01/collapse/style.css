@@ -1,0 +1,24 @@
+.collapse .c-head {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(35, 33, 33);
+}
+
+.collapse .c-head #arrow {
+    transition: 0.3s ease-in-out;
+}
+
+.collapse .c-head #arrow.down {
+    transform: rotate(90deg);
+}
+
+.collapse .c-body {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgb(35, 33, 33);
+    height: 0;
+    overflow-y: hidden;
+    transition: 0.3s linear;
+}
