@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    padding-top: 20px;
+}
+
+/* Body Layer to appear when user clicks on ball */
+.body-layer {
+    position: absolute;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s linear;
+}
+
+.body-layer.visible{
+    visibility: visible;
+    opacity: 1;
+}
+
+.body-layer .modal {
+    display: flex;
+    min-width: 200px;
+    max-width: 400px;
+    margin: 100px auto 0;
+    border-radius: 5px;
+    padding: 20px 40px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Container of football field */
+.container {
+    width: 850px;
+    height: 550px;
+    margin: 0 auto;
+    background-color: #539a46;
+    position: relative;
+}
+
+/* Layer to put ball */
+.container .layer {
+    position: relative;
+    z-index: 1000;
+    top: -34px;
+    left: 3px;
+    width: 848px;
+    height: 548px;
+    background-color: transparent;
+}
+
+/* Ball to move on click */
+.container .layer .ball {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(50% - 43px);
+    left: 80%;
+    transition: 0.3s ease-out;
+}
+
+.container .layer .kick {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s linear;
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-right: 4px solid #fff;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 1px 1px 2px #fff, -1px -1px 2px #fff;
+}
+
+.container .layer .kick.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.container .layer .pusher {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -70%);
+    transition: 0.3s ease-out;
+}
+
+.container .layer .pusher.push {
+    transform: translate(-75px, -95%);
+}
+
+.container .layer .keeper {
+    position: absolute;
+    left: 0;
+    top: 45%;
+    transform: translate(0, -70%);
+    animation: goalKeeper 1.5s linear 1s infinite alternate running;
+}
+
+@keyframes goalKeeper {
+    0% {
+        top: 45%;
+    }
+
+    100% {
+        top: 56%;
+    }
+}
+
+
+
+/* Other codes to style football field */
+.container .line {
+    width: 850px;
+    height: 550px;
+    border: 3px solid #ffffff;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.container .line::before {
+    border: 5px solid #539a46;
+    bottom: -6px;
+    content: "";
+    left: -9px;
+    position: absolute;
+    right: -6px;
+    top: -9px;
+}
+
+.container .half {
+    width: 425px;
+    height: 550px;
+    position: absolute;
+    top: 0px;
+    border-right-color: #fff;
+    border-right-style: solid;
+    border-right-width: 4px;
+    left: 0px;
+    z-index: 200;
+}
+
+.container .panelty {
+    width: 110px;
+    height: 220px;
+    border: 3px solid #ffffff;
+    position: absolute;
+    z-index: 220;
+    background-color: #539a46;
+}
+
+.container .panelty.left {
+    left: 3px;
+    top: 150px;
+    border-left-color: transparent;
+    border-left-width: 0px;
+}
+
+.container .panelty.left::after {
+    border: 3px solid #ffffff;
+    border-left-color: transparent;
+    border-left-width: 0px;
+    bottom: 45px;
+    content: "";
+    left: 0px;
+    position: absolute;
+    right: 55px;
+    top: 45px;
+}
+
+.container .panelty.right {
+    right: 0px;
+    top: 150px;
+    border-right-color: transparent;
+    border-right-width: 0px;
+}
+
+.container .panelty.right::after {
+    border: 3px solid #ffffff;
+    border-right-color: transparent;
+    border-right-width: 0px;
+    bottom: 45px;
+    content: "";
+    left: 55px;
+    position: absolute;
+    right: 0px;
+    top: 45px;
+}
+
+.container .p-spot.left:after {
+    content: "\2022";
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    top: 238px;
+    left: 80px;
+    z-index: 300;
+}
+
+.container .p-spot.right:after {
+    content: "\2022";
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    top: 238px;
+    right: 80px;
+    z-index: 300;
+}
+
+.container .center {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border: 3px solid #ffffff;
+    left: 359px;
+    top: 193px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.container .center::after {
+    background-color: #fff;
+    border: 5px solid #fff;
+    bottom: 55px;
+    content: "";
+    left: 55px;
+    position: absolute;
+    right: 55px;
+    top: 55px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.container .p-place {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    height: 130px;
+    position: absolute;
+    width: 150px;
+    z-index: 210;
+    border: 3px solid transparent;
+}
+
+.container .p-place.left {
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    border-top-color: #fff;
+    left: 0;
+    top: 193px;
+}
+
+.container .p-place.right {
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    border-top-color: #fff;
+    right: 0px;
+    top: 193px;
+}
