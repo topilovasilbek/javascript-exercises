@@ -1,8 +1,8 @@
-/* document.body.oncontextmenu = () => false;
+document.body.oncontextmenu = () => false;
 
 window.onkeydown = (e) => {
   if (e.keyCode === 44) uncopyable.style.color = "transparent";
-  if (e.ctrlKey || e.shiftKeyw) return false;
+  if (e.ctrlKey || e.shiftKey) return false;
 };
 
 window.onblur = function () {
@@ -11,9 +11,9 @@ window.onblur = function () {
 window.onfocus = function () {
   uncopyable.style.color = "#000";
 };
- */
 
-document.addEventListener("keyup", function (e) {
+
+/* document.addEventListener("keyup", function (e) {
   let keyCode = e.keyCode ? e.keyCode : e.which;
   if (keyCode == 44) {
     stopPrntScr();
@@ -37,4 +37,4 @@ function AccessClipboardData() {
     window.clipboardData.setData("text", "Access   Restricted");
   } catch (err) {}
 }
-setInterval("AccessClipboardData()", 300);
+setInterval("AccessClipboardData()", 300); */
